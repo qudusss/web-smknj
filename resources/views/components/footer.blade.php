@@ -41,8 +41,8 @@
                     <li><a href="/visi-misi-smknj">Visi & Misi</a></li>
                     <li><a href="/identitas-smknj">Identitas Sekolah</a></li>
                     <li><a href="/program-keahlian">Program Keahlian</a></li>
-                    <li><a href="#">Fasilitas</a></li>
-                    <li><a href="#">Prestasi</a></li>
+                    <li><a href="/ekstrakurikuler">Ekstrakurikuler</a></li>
+                    <li><a href="/galeri-prestasi">Prestasi</a></li>
                 </ul>
             </div>
 
