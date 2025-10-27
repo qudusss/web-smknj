@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\PengumumanSMKController;
+use App\Http\Controllers\KelulusanController;
 use App\Http\Controllers\AlumniSmkController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\BerandaController;
@@ -9,16 +10,15 @@ use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfilSMKNJController;
 use App\Http\Controllers\ProgramSMKNJController;
+use App\Http\Controllers\DownloadSMKNJController;
+use App\Http\Controllers\ChatbotController;
+
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
 
@@ -44,6 +44,15 @@ Route::get('galeri-prestasi', [PrestasiController::class, 'prestasi'])->name('ga
 
 Route::get('daftar-berita', [BeritaController::class, 'index'])->name('berita-sekolah');
 Route::get('detail-berita/{id}', [BeritaController::class, 'detail_berita'])->name('detail-berita');
+
+Route::get('/cek-kelulusan', [KelulusanController::class, 'showCheckForm'])->name('kelulusan.check');
+Route::post('/hasil-kelulusan', [KelulusanController::class, 'processCheck'])->name('kelulusan.process');
+
+Route::get('pengumuman', [PengumumanSMKController::class, 'index'])->name('pengumuman.index');
+
+Route::get('download', [DownloadSMKNJController::class, 'index'])->name('download.index');
+
+Route::post('/ai-chat', [ChatbotController::class, 'sendMessage']);
 
 Route::get('kontak', function () {
     return view('kontak');

@@ -11,11 +11,13 @@ use App\Admin\Controllers\JurusanController;
 use App\Admin\Controllers\KatalumController;
 use App\Admin\Controllers\KepsekController;
 use App\Admin\Controllers\LayananController;
+use App\Admin\Controllers\PengumumanController;
+use App\Admin\Controllers\DownloadController;
 use App\Admin\Controllers\ProfilSekolahController;
 use App\Admin\Controllers\UserController;
 use App\Admin\Controllers\VimisiController;
 
-use Illuminate\Support\Facades\Route; // ✅ perbaikan di sini
+use Illuminate\Support\Facades\Route;
 use OpenAdmin\Admin\Facades\Admin;
 
 Admin::routes();
@@ -41,4 +43,6 @@ Route::group([
     $router->resource('gafotos', GafotoController::class);
     $router->resource('gaprestaso', GaprestasiController::class);
     $router->resource('alumnis', AlumniController::class);
+    $router->resource('pengumuman', PengumumanController::class);
+    $router->resource('downloads', DownloadController::class);
 });
