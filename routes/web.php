@@ -9,6 +9,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\EkstrakurikulerController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfilSMKNJController;
+use App\Http\Controllers\FasilitasSMKController;
 use App\Http\Controllers\ProgramSMKNJController;
 use App\Http\Controllers\DownloadSMKNJController;
 use App\Http\Controllers\ChatbotController;
@@ -27,6 +28,8 @@ Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 Route::get('profil-smknj', [ProfilSMKNJController::class, 'index'])->name('smknj.index');
 Route::get('visi-misi-smknj', [ProfilSMKNJController::class, 'vimisi'])->name('smknj.vimisi');
 Route::get('identitas-smknj', [ProfilSMKNJController::class, 'identitas'])->name('smknj.identitas');
+Route::get('fasilitas', [FasilitasSMKController::class, 'index'])->name('fasilitas.index');
+Route::get('fasilitas/{id}', [FasilitasSMKController::class, 'show'])->name('fasilitas.show');
 
 Route::get('program-keahlian', [ProgramSMKNJController::class, 'keahlian'])->name('program.keahlian');
 Route::get('ekstrakurikuler', [EkstrakurikulerController::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
@@ -52,7 +55,7 @@ Route::get('pengumuman', [PengumumanSMKController::class, 'index'])->name('pengu
 
 Route::get('download', [DownloadSMKNJController::class, 'index'])->name('download.index');
 
-Route::post('/ai-chat', [ChatbotController::class, 'sendMessage']);
+Route::post('/ai-chat', [ChatbotController::class, 'handleChat'])->name('ai.chat');
 
 Route::get('kontak', function () {
     return view('kontak');

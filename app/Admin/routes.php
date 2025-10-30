@@ -16,6 +16,7 @@ use App\Admin\Controllers\DownloadController;
 use App\Admin\Controllers\ProfilSekolahController;
 use App\Admin\Controllers\UserController;
 use App\Admin\Controllers\VimisiController;
+use App\Admin\Controllers\FasilitasController;
 
 use Illuminate\Support\Facades\Route;
 use OpenAdmin\Admin\Facades\Admin;
@@ -35,6 +36,7 @@ Route::group([
     $router->resource('beritas', BeritaController::class);
     $router->resource('profil-sekolahs', ProfilSekolahController::class);
     $router->resource('vimisis', VimisiController::class);
+    $router->resource('fasilitas', FasilitasController::class);
     $router->resource('identi-sekolahs', IdentiSekolahController::class);
     $router->resource('konsentrasikeahlian', JurusanController::class);
     $router->resource('kata-alumnis', KatalumController::class);

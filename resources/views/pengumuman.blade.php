@@ -46,7 +46,6 @@
                 </div>
             </div>
 
-            {{-- DAFTAR PENGUMUMAN (Card-View) --}}
             <div class="row g-4 justify-content-center">
                 @forelse ($pengumumans as $item)
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
