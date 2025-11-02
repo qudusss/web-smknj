@@ -32,9 +32,12 @@ Route::get('fasilitas', [FasilitasSMKController::class, 'index'])->name('fasilit
 Route::get('fasilitas/{id}', [FasilitasSMKController::class, 'show'])->name('fasilitas.show');
 
 Route::get('program-keahlian', [ProgramSMKNJController::class, 'keahlian'])->name('program.keahlian');
+Route::get('program/{jurusan}', [ProgramSMKNJController::class, 'detail'])->name('program.detail');
+
+
+Route::get('program-keahlian', [ProgramSMKNJController::class, 'keahlian'])->name('program.keahlian');
 Route::get('ekstrakurikuler', [EkstrakurikulerController::class, 'ekstrakurikuler'])->name('ekstrakurikuler');
 
-// alumni
 Route::get('alumni-smknj', [AlumniSmkController::class, 'tracer_study'])->name('alumni');
 
 Route::get('alumni-smknj/change_status/{id}', [AlumniSmkController::class, 'status_kehadiran'])->name('change_status');

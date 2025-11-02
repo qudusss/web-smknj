@@ -18,6 +18,7 @@ class CreateProgramKeahlianTable extends Migration
             $table->string('nama')->nullable();
             $table->string('singkatan')->nullable();
             $table->string('foto')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

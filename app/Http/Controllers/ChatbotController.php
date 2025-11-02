@@ -46,16 +46,15 @@ class ChatbotController extends Controller
 
             Jawab pertanyaan pengguna berikut berdasarkan aturan di atas:
         ";
-        // Akhir dari $systemPrompt
 
-        // Gabungkan prompt sistem, data, dan pertanyaan user
-        $fullPrompt = $systemPrompt . "\n" . $userMessage;
+        // Prompt sistem, data, dan pertanyaan user
+        $fullPrompt = $systemPrompt . "\n\n### USER:\n" . $userMessage;
         // $fullPrompt = $userMessage; // HANYA PESAN USER UNTUK TES
 
         // --- Panggilan ke API MhCloud ---
         try {
             $response = Http::timeout(60)->get($apiUrl, [
-                'text' => $fullPrompt, // Hanya kirim pesan user
+                'text' => $fullPrompt,
                 'apikey' => $apiKey,
             ]);
 
